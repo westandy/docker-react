@@ -7,3 +7,13 @@ before_install:
 
 script:
     - docker run westandy/docker-react npm run test -- --coverage
+
+deploy:
+    provider: elasticbeanstalk
+    region: 'us-west-2'
+    app: 'docker'
+    env: 'Docker-env'
+    bucket_name: 'elasticbeanstalk-us-west-2-153146565755'
+    bucket_path: 'docker'
+    on:
+        branch: master
