@@ -5,7 +5,7 @@ WORKDIR /usr/app
 # Install some dependencies
 COPY ./package.json .
 RUN npm install --no-package-lock
-COPY . .
+COPY ./ ./
 RUN npm run build
 
 # /usr/app/build <-- all the stuff
